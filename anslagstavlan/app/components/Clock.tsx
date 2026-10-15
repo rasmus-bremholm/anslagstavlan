@@ -47,7 +47,7 @@ export default function Clock() {
 
 	return (
 		<>
-			<time dateTime={now?.toISOString()} className='block font-display text-5xl tabular-nums'>
+			<time dateTime={now?.toISOString()} className='block font-bold font-display text-5xl tabular-nums'>
 				{now ? timeFormat.format(now) : "--:--"}
 			</time>
 			<p className='capitalize text-2xl text-muted'>{now ? dateFormat.format(now) : "\u00A0"}</p>

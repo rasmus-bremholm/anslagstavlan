@@ -1,6 +1,9 @@
 import Clock from "./components/Clock";
+import { getPost, getPosts } from "@/lib/posts";
 
-export default function Home() {
+export default async function Home() {
+	const post = await getPost(1);
+
 	return (
 		<main className='flex-1 px-16'>
 			<header className='flex items-center justify-between py-16'>
@@ -13,7 +16,7 @@ export default function Home() {
 				</div>
 			</header>
 			<div id='content' className='grid grid-cols-2 gap-8'>
-				<div>Hej{/* Featrured Item */}</div>
+				<div>{post?.title}</div>
 				<div>
 					<h3 className='text-xl font-bold text-muted uppercase'>senast upplagt</h3>
 					{/* Item List */}
