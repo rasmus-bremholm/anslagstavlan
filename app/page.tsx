@@ -1,5 +1,6 @@
 import Clock from "./components/Clock";
 import { getPost, getPosts } from "@/lib/posts";
+import FeaturedPost from "./components/FeaturedPost";
 
 export default async function Home() {
 	const posts = await getPosts(10);
@@ -18,7 +19,7 @@ export default async function Home() {
 				</div>
 			</header>
 			<div id='content' className='grid grid-cols-2 gap-8'>
-				<div>hej</div>
+				{posts && <FeaturedPost posts={posts} />}
 				<div>
 					<h3 className='text-xl font-bold text-muted uppercase'>senast upplagt</h3>
 					{/* Item List */}

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+@theme inline {
 	--color-ink: #3a3833;
 	--color-muted: #5c5a54;
 	--color-muted-2: #7a776f;
@@ -19,24 +19,23 @@
 	--color-cat-grupp: oklch(0.74 0.12 245); /* Grupparbete */
 	--color-cat-kop: oklch(0.78 0.13 65); /* Köp, sälj & skänk */
 
-	--font-sans: var(--font-inter);
-	--font-display: var(--font-fraunces);
-
 	--radius-note: 6px;
 	--shadow-note: 0 1px 2px rgb(58 56 51 / 0.08), 0 4px 12px rgb(58 56 51 / 0.08);
 }
 
-body {
-	background: var(--color-board);
-	color: var(--color-ink);
-	font-family: var(--font-sans);
-}
-
 @layer base {
+	body {
+		background: var(--color-board);
+		color: var(--color-ink);
+		font-family: var(--font-sans);
+	}
 	h1 {
-		@apply text-6xl font-bold tracking-tight font-display mb-4;
+		@apply text-6xl font-bold tracking-tight font-display mb-2;
 	}
 	h2 {
-		@apply text-6xl font-bold tracking-tight font-display mb-4;
+		@apply text-5xl font-bold tracking-tight font-display mb-2;
+	}
+	h3 {
+		@apply text-4xl font-bold tracking-tight font-sans mb-2;
 	}
 }
