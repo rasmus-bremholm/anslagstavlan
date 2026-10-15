@@ -3,27 +3,26 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
+	variable: "--font-inter",
+	subsets: ["latin"],
 });
 
 const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
+	variable: "--font-fraunces",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Anslagstavlan",
-  description: "Anslagstavlan för Tetiko-studenter",
+	title: "Anslagstavlan",
+	description: "Anslagstavlan för Tetiko-studenter",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  return (
-    <html
-      lang="sv"
-      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
-    </html>
-  );
+	return (
+		<html lang='sv' className={`${inter.variable} ${fraunces.variable} h-full antialiased`}>
+			<body lang='sv' className='min-h-full flex flex-col'>
+				{children}
+			</body>
+		</html>
+	);
 }
