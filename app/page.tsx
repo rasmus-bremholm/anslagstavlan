@@ -18,7 +18,7 @@ export default async function Home() {
 				</div>
 			</header>
 			<div id='content' className='grid grid-cols-2 gap-8'>
-				<div>{posts?.title}</div>
+				<div>hej</div>
 				<div>
 					<h3 className='text-xl font-bold text-muted uppercase'>senast upplagt</h3>
 					{/* Item List */}
