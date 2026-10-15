@@ -1,3 +1,5 @@
+import Clock from "./components/Clock";
+
 export default function Home() {
 	return (
 		<main className='flex-1 px-16'>
@@ -7,8 +9,7 @@ export default function Home() {
 					<p className='text-2xl text-muted'>Låna, byt eller hitta gruppen till ditt projekt.</p>
 				</div>
 				<div>
-					<h2>10:11</h2>
-					<p className='text-2xl text-muted'>Torsdag 15 Oktober</p>
+					<Clock />
 				</div>
 			</header>
 			<div id='content' className='grid grid-cols-2 gap-8'>
