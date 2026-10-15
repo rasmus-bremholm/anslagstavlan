@@ -19,7 +19,7 @@ export default async function Home() {
 				</div>
 			</header>
 			<div id='content' className='grid grid-cols-2 gap-8'>
-				{posts && <FeaturedPost posts={posts} />}
+				{posts && <FeaturedPost posts={featuredPost} />}
 				<div>
 					<h3 className='text-xl font-bold text-muted uppercase'>senast upplagt</h3>
 					{/* Item List */}
