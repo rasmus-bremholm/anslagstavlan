@@ -1,6 +1,6 @@
 "use client";
 import type { Post } from "@/lib/types";
-import { timeAgo } from "@/lib/time";
+import TimeAgo from "@/app/components/TimeAgo";
 import { useState } from "react";
 
 interface FeaturedPostProps {
@@ -30,7 +30,7 @@ export default function FeaturedPost({ posts }: FeaturedPostProps) {
 
 				<footer className='mt-8 flex items-center justify-between gap-4 border-t border-dashed border-line-dashed pt-4 text-[clamp(0.875rem,1.2vw,1.9rem)]'>
 					<strong className='text-ink'>{post.name}</strong>
-					<span className='text-muted-2'>{timeAgo(post.created_at)}</span>
+					<TimeAgo date={post.created_at} />
 				</footer>
 			</article>
 			<div className='flex items-center mt-8 gap-2'>
