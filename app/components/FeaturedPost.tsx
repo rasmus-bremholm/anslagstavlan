@@ -1,17 +1,12 @@
 "use client";
 import type { Post } from "@/lib/types";
 import TimeAgo from "@/app/components/TimeAgo";
+import { categoryColor } from "@/lib/categories";
 import { useState } from "react";
 
 interface FeaturedPostProps {
 	posts: Post[];
 }
-
-// ponytail: category strings assumed to match the DB values, unknown ones fall back to orange
-const tapeColor: Record<string, string> = {
-	"Låna & byta": "bg-cat-lana",
-	Grupparbete: "bg-cat-grupp",
-};
 
 export default function FeaturedPost({ posts }: FeaturedPostProps) {
 	const [index, setIndex] = useState(0);
@@ -21,7 +16,7 @@ export default function FeaturedPost({ posts }: FeaturedPostProps) {
 	return (
 		<div className='px-2 pt-4'>
 			<article className='relative rotate-[-1.2deg] rounded-note bg-paper p-8 shadow-note lg:p-14'>
-				<span className={`absolute -top-4 left-8 rotate-2 px-4 py-1.5 text-sm font-bold text-ink ${tapeColor[post.category] ?? "bg-cat-kop"}`}>
+				<span className={`absolute -top-4 left-8 rotate-2 px-4 py-1.5 text-sm font-bold text-paper ${categoryColor(post.category)}`}>
 					{post.category}
 				</span>
 

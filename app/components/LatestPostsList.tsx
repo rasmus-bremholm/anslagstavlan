@@ -1,21 +1,17 @@
-import { getPosts } from "@/lib/posts";
+import { categoryColor } from "@/lib/categories";
 import { Post } from "@/lib/types";
 
 interface LatestPostsListProps {
 	posts: Post[];
 }
 
-export default async function LatestPostsList({ posts }: LatestPostsListProps) {
-	if (!posts) {
-		return null;
-	}
-
+export default function LatestPostsList({ posts }: LatestPostsListProps) {
 	return (
 		<>
-			{posts.map((p, index) => (
-				<div key={p.id} className='bg-paper p-6'>
-					<div className='flex align-center justify-between'>
-						<div>{p.category}</div>
+			{posts.map((p) => (
+				<div key={p.id} className='bg-paper p-6 odd:-rotate-1 even:rotate-1'>
+					<div className='flex items-center justify-between'>
+						<div className={`px-4 py-1.5 mb-2 text-sm font-bold text-paper ${categoryColor(p.category)}`}>{p.category}</div>
 						Hejsan
 					</div>
 					<div>

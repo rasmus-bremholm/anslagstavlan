@@ -6,7 +6,7 @@ import LatestPostsList from "@/app/components/LatestPostsList";
 export default async function Home() {
 	const posts = await getPosts(10);
 	const latest = posts.slice(0, 5);
-	const featuredPost = posts.length > 5 ? posts.slice(5) : posts;
+	const featuredPost = posts.slice(5);
 
 	return (
 		<main className='flex-1 px-16'>
@@ -20,7 +20,7 @@ export default async function Home() {
 				</div>
 			</header>
 			<div id='content' className='grid grid-cols-2 gap-8'>
-				{posts && <FeaturedPost posts={featuredPost} />}
+				{featuredPost.length > 0 && <FeaturedPost posts={featuredPost} />}
 				<div>
 					<h3 className='text-xl font-bold text-muted uppercase'>senast upplagt</h3>
 					<LatestPostsList posts={latest} />
