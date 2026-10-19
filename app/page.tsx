@@ -1,6 +1,7 @@
 import Clock from "./components/Clock";
 import { getPost, getPosts } from "@/lib/posts";
-import FeaturedPost from "./components/FeaturedPost";
+import FeaturedPost from "@/app/components/FeaturedPost";
+import LatestPostsList from "@/app/components/LatestPostsList";
 
 export default async function Home() {
 	const posts = await getPosts(10);
@@ -22,7 +23,7 @@ export default async function Home() {
 				{posts && <FeaturedPost posts={featuredPost} />}
 				<div>
 					<h3 className='text-xl font-bold text-muted uppercase'>senast upplagt</h3>
-					{/* Item List */}
+					<LatestPostsList posts={latest} />
 				</div>
 			</div>
 		</main>
