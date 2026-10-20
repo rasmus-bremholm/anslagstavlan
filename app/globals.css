@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+* {
+	transition: all 0.2s ease;
+}
+
 @theme inline {
 	--color-ink: #3a3833;
 	--color-muted: #5c5a54;
