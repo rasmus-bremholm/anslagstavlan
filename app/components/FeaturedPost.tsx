@@ -1,15 +1,14 @@
-"use client";
 import type { Post } from "@/lib/types";
 import TimeAgo from "@/app/components/TimeAgo";
 import { categoryColor } from "@/lib/categories";
-import { useState } from "react";
 
 interface FeaturedPostProps {
 	posts: Post[];
+	index: number;
+	onSelect: (i: number) => void;
 }
 
-export default function FeaturedPost({ posts }: FeaturedPostProps) {
-	const [index, setIndex] = useState(0);
+export default function FeaturedPost({ posts, index, onSelect }: FeaturedPostProps) {
 	const post = posts[index];
 	if (!post) return null;
 
@@ -30,7 +29,7 @@ export default function FeaturedPost({ posts }: FeaturedPostProps) {
 			</article>
 			<div className='flex items-center mt-8 gap-2'>
 				{posts.map((post, i) => (
-					<div onClick={() => setIndex(i)} className='bg-ink rounded-full h-3 w-5' key={post.id} />
+					<div onClick={() => onSelect(i)} className={`bg-ink rounded-full h-3 w-5 ${i === index ? "" : "opacity-30"}`} key={post.id} />
 				))}
 			</div>
 		</div>

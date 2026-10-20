@@ -1,12 +1,9 @@
 import Clock from "./components/Clock";
-import { getPost, getPosts } from "@/lib/posts";
-import FeaturedPost from "@/app/components/FeaturedPost";
-import LatestPostsList from "@/app/components/LatestPostsList";
+import { getPosts } from "@/lib/posts";
+import PostBoard from "@/app/components/PostBoard";
 
 export default async function Home() {
-	const posts = await getPosts(10);
-	const latest = posts.slice(0, 5);
-	const featuredPost = posts.slice(5);
+	const posts = await getPosts(6);
 
 	return (
 		<main className='flex-1 px-16'>
@@ -20,11 +17,7 @@ export default async function Home() {
 				</div>
 			</header>
 			<div id='content' className='grid grid-cols-2 gap-8'>
-				{featuredPost.length > 0 && <FeaturedPost posts={featuredPost} />}
-				<div>
-					<h3 className='text-xl font-bold text-muted uppercase'>senast upplagt</h3>
-					<LatestPostsList posts={latest} />
-				</div>
+				{posts.length > 0 && <PostBoard posts={posts} />}
 			</div>
 		</main>
 	);
